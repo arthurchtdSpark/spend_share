@@ -2,7 +2,7 @@ export default {
 
   editor: {
     label: {
-      en: "Pie Chart",
+      en: "ROI by Channel",
     },
   },
 

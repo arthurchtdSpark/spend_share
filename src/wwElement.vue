@@ -22,50 +22,49 @@ export default {
       
       return {
         chart: {
-          type: 'pie', 
-          backgroundColor: 'transparent',
-        },
-        exporting: {
-          enabled: false,
+          type: 'column',
         },
         title: {
           text: null
         },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        xAxis: {
+          categories: [
+            'Google Ireland', 'Google Portugal', 'Google Netherlands', 'Google Italy',
+            'Tiktok Belgium', 'Tiktok Portugal', 'Tiktok Italy', 'Google Spain',
+            'Google Germany', 'Meta Netherlands', 'Meta Belgium', 'Meta Switzerland',
+            'Meta Germany', 'Meta Ireland', 'Meta Spain', 'Meta Portugal',
+            'Meta Italy', 'Google Belgium', 'Google Switzerland', 'Tiktok Switzerland',
+            'Tiktok Spain'
+          ]
         },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            innerSize: '50%',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-            },
-            colors: [
-                    '#FFB3BA', // Rose pastel
-                    '#FFDFBA', // Orange pastel
-                    '#FFFFBA', // Jaune pastel
-                    '#BAFFC9', // Vert pastel
-                    '#BAE1FF', // Bleu pastel
-                    '#D4A5A5', // Rouge pastel
-                    '#B39EB5', // Violet pastel
-                  ], // Utilisation des couleurs pastel
+        yAxis: {
+          title: {
+            enabled:false
           }
         },
+        legend: {
+          enabled: false // Désactive la légende
+         },
+
+         exporting: {
+            enabled: false,
+        },
+
         series: [{
-          name: 'Channel',
-          colorByPoint: true,
+          name: 'ROI',
           data: [
-            { name: 'Meta Belgium', y: 26.13 },
-            { name: 'Meta Italy', y: 25.17 },
-            { name: 'Meta Switzerland', y: 14.96 },
-            { name: 'Meta Spain', y: 14.03 },
-            { name: 'Meta Portugal', y: 7.85 },
-            { name: 'Meta Germany', y: 3.17 },
-            { name: 'Other', y: 8.71 }
-          ]
+            144.67, 13.8, 9.5, 7.3, 7.24,
+            6.72, 5.32, 4.4, 2.33, 2.04,
+            1.11, 1.09, 0.87, 0.7, 0.62,
+            0.55, 0.38, 0.034, 0, 0
+          ],
+          dataLabels: {
+            enabled: true,
+            verticalAlign: 'bottom', // Positionne les étiquettes en haut
+          },
+          color: '#8BD7B6', 
+
+          
         }]
       };
     },
