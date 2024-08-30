@@ -23,8 +23,7 @@ export default {
       return {
         chart: {
           type: 'bar',
-          animation: true, // Active l'animation globale du chart
-          backgroundColor:'transparent',
+          backgroundColor:'transparent'
         },
         title: {
           text: null
