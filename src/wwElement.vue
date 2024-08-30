@@ -23,6 +23,7 @@ export default {
       return {
         chart: {
           type: 'pie', 
+          backgroundColor: 'transparent',
         },
         exporting: {
           enabled: false,
