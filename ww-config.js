@@ -2,7 +2,7 @@ export default {
 
   editor: {
     label: {
-      en: "Spend by channel",
+      en: "ROI Confidence",
     },
   },
 
