@@ -92,7 +92,6 @@ export default {
           data: [27.6, 9.0, 15.4, 8.3, 4.1, 2.6, 11.0, 1.0, 5.2, 1.5, 1.4, 12.8], // Données pour Effect Share
           color: 'rgb(48, 111, 225)' // Couleur pour Effect Share
         }]
-      }
       };
     },
   },
