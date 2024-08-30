@@ -23,54 +23,76 @@ export default {
       return {
         chart: {
           type: 'bar',
+          animation: true, // Active l'animation globale du chart
           backgroundColor:'transparent',
         },
         title: {
-          text: null,
+          text: null
         },
         xAxis: {
           categories: [
-            'Google Ireland', 'Google Portugal', 'Google Netherlands', 'Google Italy',
-            'Tiktok Portugal', 'Tiktok Belgium', 'Tiktok Italy', 'Other (14)'
+            'Meta Belgium',
+            'Meta Italy',
+            'Meta Switzerland',
+            'Meta Spain',
+            'Meta Portugal',
+            'Meta Germany',
+            'Google Italy',
+            'Meta Ireland',
+            'Google Spain',
+            'Meta Netherlands',
+            'Google Germany',
+            'Other (10)'
           ],
+          title: {
+            text: null
+          }
         },
         yAxis: {
+          min: 0,
           title: {
             text: null,
+            align: 'high'
           },
+          labels: {
+            overflow: 'justify'
+          }
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.y:.1f}%</b>' // Format du tooltip avec un chiffre après la virgule
         },
         legend: {
-          enabled: true, // Active la légende
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom',
+          floating: false,
+          y: 10
+        },
+        plotOptions: {
+          series: {
+            groupPadding: 0.1,
+            animation: {
+              duration: 1500, // Durée de l'animation en millisecondes
+              easing: 'easeOutBounce', // Type d'animation (par exemple, easing pour un effet "rebond")
+            },
+            dataLabels: {
+              enabled: true, // Active les étiquettes de données
+              format: '{point.y:.1f}%' // Format d'affichage des valeurs
+            }
+          }
         },
         exporting: {
           enabled: false,
         },
-        plotOptions: {
-          bar: {
-            borderRadius: '20%',
-            dataLabels: {
-                enabled: true
-            },
-            groupPadding: 0.1
-        }
-        },
-        series: [
-          {
-            name: 'Lower bound',
-            data: [90, 10, 5, 20, 6, 9, 10, 260], // Valeurs pour Lower bound
-            color: 'rgb(160, 189, 241)', // Couleur pour Lower bound
-          },
-          {
-            name: 'ROI',
-            data: [10, 10, 10, 10, 10, 5, 20, 430], // Valeurs pour ROI
-            color: 'rgb(61, 61, 166)', // Couleur pour ROI
-          },
-          {
-            name: 'Upper bound',
-            data: [20, 20, 10, 10, 10, 10, 40, 45], // Valeurs pour Upper bound
-            color: 'rgb(104, 150, 233)', // Couleur pour Upper bound
-          }, 
-        ],
+        series: [{
+          name: 'Spend Share',
+          data: [26.1, 25.2, 15.0, 14.0, 7.8, 3.2, 1.6, 1.5, 1.2, 0.8, 0.6, 3.0], // Données pour Spend Share
+          color: 'rgb(160, 189, 241)' // Couleur pour Spend Share
+        }, {
+          name: 'Effect Share',
+          data: [27.6, 9.0, 15.4, 8.3, 4.1, 2.6, 11.0, 1.0, 5.2, 1.5, 1.4, 12.8], // Données pour Effect Share
+          color: 'rgb(48, 111, 225)' // Couleur pour Effect Share
+        }]
       }
       };
     },
