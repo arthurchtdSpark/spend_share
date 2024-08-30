@@ -1,0 +1,15 @@
+{
+  "name": "pie_chart",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "weweb build",
+    "serve": "weweb serve"
+  },
+  "devDependencies": {
+    "@weweb/cli": "latest"
+  },
+  "dependencies": {
+    "highcharts": "^11.4.8",
+    "highcharts-vue": "^2.0.1"
+  }
+}
