@@ -20,52 +20,95 @@ export default {
 
     chartOptions() {
       
-      return {
-        chart: {
-          type: 'column',
+      return {chart: {
+          type: 'bar',
+          backgroundColor:'transparent'
         },
         title: {
           text: null
         },
         xAxis: {
           categories: [
-            'Google Ireland', 'Google Portugal', 'Google Netherlands', 'Google Italy',
-            'Tiktok Belgium', 'Tiktok Portugal', 'Tiktok Italy', 'Google Spain',
-            'Google Germany', 'Meta Netherlands', 'Meta Belgium', 'Meta Switzerland',
-            'Meta Germany', 'Meta Ireland', 'Meta Spain', 'Meta Portugal',
-            'Meta Italy', 'Google Belgium', 'Google Switzerland', 'Tiktok Switzerland',
-            'Tiktok Spain'
-          ]
+            'Meta Belgium',
+            'Meta Italy',
+            'Meta Switzerland',
+            'Meta Spain',
+            'Meta Portugal',
+            'Meta Germany',
+            'Google Italy',
+            'Meta Ireland',
+            'Google Spain',
+            'Meta Netherlands',
+            'Google Germany',
+            'Tiktok Belgium',
+            'Tiktok Spain',
+            'Tiktok Italy',
+            'Google Belgium',
+            'Other (6)'
+          ],
+          title: {
+            text: null
+          }
         },
         yAxis: {
+          min: 0,
           title: {
-            enabled:false
+            text: null,
+            align: 'high'
+          },
+          labels: {
+            overflow: 'justify'
           }
         },
         legend: {
-          enabled: false // Désactive la légende
-         },
-
-         exporting: {
-            enabled: false,
+          enabled:false
         },
-
-        series: [{
-          name: 'ROI',
-          data: [
-            144.67, 13.8, 9.5, 7.3, 7.24,
-            6.72, 5.32, 4.4, 2.33, 2.04,
-            1.11, 1.09, 0.87, 0.7, 0.62,
-            0.55, 0.38, 0.034, 0, 0
-          ],
-          dataLabels: {
-            enabled: true,
-            verticalAlign: 'bottom', // Positionne les étiquettes en haut
+        plotOptions: {
+          series: {
+            stacking: 'normal', // Empile les séries l'une en dessous de l'autre
+            pointWidth: 25, // Largeur des barres
+            dataLabels: {
+              enabled: true, // Active les étiquettes de données
+              crop:false,
+              overflow:'allow',
+              align: 'right',
+              x: 70,
+              format: '{point.y:,.1f}€' // Format d'affichage des valeurs avec le formatage anglais
+            }
           },
-          color: '#8BD7B6', 
 
-          
-        }]
+          animation: {
+              duration: 1500, // Durée de l'animation en millisecondes
+              easing: 'easeOutBounce', // Type d'animation (par exemple, easing pour un effet "rebond")
+          },
+
+        },
+        exporting: {
+          enabled: false,
+        },
+        series: [
+          {
+            name: 'Spend',
+            data: [
+              218325,
+              210328,
+              125022,
+              117205,
+              65589,
+              26454,
+              13299,
+              12602,
+              10327,
+              6293,
+              5235,
+              4924,
+              4287,
+              3299,
+              2959
+            ], // Données pour Spend Share
+            color: 'rgb(104, 150, 233)',
+          }
+        ]
       };
     },
   },
