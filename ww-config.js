@@ -2,7 +2,7 @@ export default {
 
   editor: {
     label: {
-      en: "Spend Chare",
+      en: "Spend Share",
     },
   },
 
